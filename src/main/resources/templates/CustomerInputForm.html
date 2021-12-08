@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<style>
+body{
+text-align: center;
+font-size: 30px;
+margin-top: 100px;
+background-color: #F5FDC6;
+}
+.order{
+text-align: center;
+font-size: 30px;
+margin-top: 100px;
+}
+</style>
+<body>
+<form method="post" action="customerToSave" th:object=${customerToSave}>
+    <div>
+        <label>Name</label><input type="text" th:field="*{name}">
+    </div>
+    <div>
+        <label>Delivery Address</label><input type="text" th:field="*{deliveryAddress}">
+    </div>
+    <div>
+        <label>Contact</label><input type="text" th:field="*{contact}">
+    </div>
+    <div>
+        <label>Active</label>
+        <input type="radio" name="active" th:field="*{active}" value="true"><label>Active</label>
+        <input type="radio" name="active" th:field="*{active}" value="false"><label>Non Active</label>
+    </div>
+<button type="submit" ><a href="http://localhost:8080/customerToSave"></a>Save Customer</button>
+    <div class="order">
+<a href="http://localhost:8080/order">Order</a>
+    </div>
+</form>
+</body>
+</html>

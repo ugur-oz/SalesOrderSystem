@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+body{
+text-align: center;
+font-size: 30px;
+margin-top: 100px;
+background-color: #F5FDC6;
+}
+<body>
+
+</style>
+<body>
+<form>
+
+
+</form>
+<label>Customer</label>
+<select> <!-- <select th:field="*{customerIndex}"> -->
+    <option th:each="customer : ${customerList}"
+            th:text="${customer.name + ' ' + customer.deliveryAddress + ' ' + customer.contact}"
+            th:value="${customerList.indexOf(customer)}"></option>
+</select>
+
+<div>
+    <button type="submit">Save</button>
+</div>
+
+
+<form method="post" action="saveOrder" th:object="${orderToSave}">
+
+
+</form>
+
+</body>
+</html>

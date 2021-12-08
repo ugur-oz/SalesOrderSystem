@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>All Items</title>
+</head>
+<body>
+<table>
+    <thead>
+<th>Weight</th>
+<th>Description</th>
+    </thead>
+<tbody>
+<tr th:each="item : ${itemList}">
+    <td th:text="${item.weight}"></td>
+    <td th:text="${item.description}"></td>
+</tr>
+</tbody>
+
+</table>
+<button><a href="http://localhost:8080/item">Save more Items</a></button>
+</body>
+</html>

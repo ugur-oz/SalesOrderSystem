@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>All Customers</title>
+</head>
+<style>
+body{
+text-align: center;
+font-size: 30px;
+margin-top: 100px;
+background-color: #F5FDC6;
+}
+<body>
+</style>
+<table>
+    <thead>
+    <th>Name</th>
+    <th>Delivery Adress</th>
+    <th>Contact</th>
+    <th>Active</th>
+    </thead>
+    <tbody>
+    <tr th:each="customer : ${customerList} ">
+        <td th:text="${customer.name}"></td>
+        <td th:text="${customer.deliveryAddress}"></td>
+        <td th:text="${customer.contact}"></td>
+        <td th:if="${customer.active}">Active</td>
+        <td th:if="${!customer.active}">Non Active</td>
+
+    </tr>
+    </tbody>
+</table>
+<button><a href="http://localhost:8080/customer">Save more Customer</a></button>
+</body>
+</html>

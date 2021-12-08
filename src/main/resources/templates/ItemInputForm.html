@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Item</title>
+</head>
+<style>
+body{
+text-align: center;
+font-size: 30px;
+margin-top: 100px;
+background-color: #F5FDC6;
+}
+<body>
+</style>
+<body>
+<form method="post" action="saveItem" th:object="${itemToSave}">
+    <div>
+        <label>Weight</label>
+        <input type="text" th:field="*{weight}">
+    </div>
+    <div>
+        <label>Description</label>
+        <input type="text" th:field="*{description}">
+    </div>
+    <button type="submit">Save Item</button>
+   </form>
+
+</body>
+</html>

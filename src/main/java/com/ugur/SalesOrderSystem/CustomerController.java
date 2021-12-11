@@ -12,14 +12,6 @@ import java.util.List;
 public class CustomerController {
     public static List<Customer> customerList = new ArrayList<>();
 
-    public static List<Customer> getCustomerList() {
-        return customerList;
-    }
-
-    public static void setCustomerList(List<Customer> customerList) {
-        CustomerController.customerList = customerList;
-    }
-
     @GetMapping("customer")
     public String getCustomerInputForm(Model model) {
         model.addAttribute("customerToSave", new Customer());

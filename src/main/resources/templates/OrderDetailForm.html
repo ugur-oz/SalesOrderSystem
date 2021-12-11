@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Details</title>
+</head>
+<style>
+body{
+text-align: center;
+font-size: 30px;
+margin-top: 100px;
+background-color: #F5FDC6;
+}
+</style>
+<body>
+<form method="post" action="orderDetail" th:object="${orderDetailToSave}">
+    <div>
+        <label>Quantity</label> <input type="number" th:field="*{qty}">
+    </div>
+    <div>
+        <label>Tax Status</label> <input type="text" th:field="*{taxStatus}">
+    </div>
+    <select>
+        <option th:each="k : ${orderList}"
+                th:text="${k.orderStatus + ' ' + k.createDate"
+                th:value="${orderList.indexOf(k)}"></option>
+    </select>
+    <button type="submit">Save</button>
+</form>
+
+</body>
+</html>

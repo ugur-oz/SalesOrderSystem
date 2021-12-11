@@ -24,7 +24,7 @@ public class OrderController {
 
         model.addAttribute("orderToSave", new OrderForm());
         model.addAttribute("customerList", CustomerController.customerList);
-
+        orderlist.add(convertOrderFormToOrder(orderform));
         return "OrderInputForm";
     }
 
@@ -35,9 +35,7 @@ public class OrderController {
     }
     //orderform da sadece index tutuyoruz ama order da customer da var
     private Order convertOrderFormToOrder(OrderForm orderForm) {
-
         Customer customer = CustomerController.customerList.get(orderForm.getListIndexCustomer());
-
         Order newOrder = new Order();
         newOrder.setCustomer(customer);
         return newOrder;

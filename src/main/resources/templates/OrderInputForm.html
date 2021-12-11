@@ -15,25 +15,17 @@ background-color: #F5FDC6;
 
 </style>
 <body>
-<form>
-
-
-</form>
+<form method="post" action="saveOrder" th:object="${orderToSave}">
 <label>Customer</label>
-<select> <!-- <select th:field="*{customerIndex}"> -->
-    <option th:each="customer : ${customerList}"
-            th:text="${customer.name + ' ' + customer.deliveryAddress + ' ' + customer.contact}"
-            th:value="${customerList.indexOf(customer)}"></option>
+<select th:field="*{listIndexCustomer}">
+    <option th:each="i : ${customerList}"
+            th:text="${i.name + ' ' + i.deliveryAddress}"
+            th:value="${customerList.indexOf(i)}"></option>
 </select>
 
 <div>
     <button type="submit">Save</button>
 </div>
-
-
-<form method="post" action="saveOrder" th:object="${orderToSave}">
-
-
 </form>
 
 </body>
